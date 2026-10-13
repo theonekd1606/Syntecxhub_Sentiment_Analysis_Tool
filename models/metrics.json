@@ -1,0 +1,117 @@
+{
+  "model_name": "Logistic Regression",
+  "selection_rule": "Highest mean 5-fold cross-validated macro F1 on the training set only. Logistic Regression is the primary model and is kept unless Naive Bayes beats it by more than 0.01.",
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "trained_at": "2026-10-13T19:13:23",
+  "sklearn_version": "1.8.0",
+  "random_seed": 42,
+  "dataset": {
+    "name": "sample_sentiment_dataset.csv",
+    "is_sample": true,
+    "cleaning": {
+      "rows_read": 255,
+      "text_column": "text",
+      "label_column": "sentiment",
+      "missing_text": 0,
+      "missing_label": 0,
+      "invalid_label": 0,
+      "invalid_label_examples": [],
+      "empty_after_cleaning": 0,
+      "duplicates_removed": 0,
+      "rows_kept": 255,
+      "class_counts": {
+        "negative": 85,
+        "neutral": 85,
+        "positive": 85
+      }
+    },
+    "class_counts": {
+      "negative": 85,
+      "neutral": 85,
+      "positive": 85
+    },
+    "total": 255
+  },
+  "split": {
+    "n_train": 204,
+    "n_test": 51,
+    "test_size": 0.2,
+    "stratified": true,
+    "cv_folds": 5
+  },
+  "comparison": {
+    "Logistic Regression": {
+      "cv_f1_macro": 0.7881972875995864,
+      "test_accuracy": 0.6862745098039216,
+      "test_f1_macro": 0.6845938375350139
+    },
+    "Multinomial Naive Bayes": {
+      "cv_f1_macro": 0.7584793381402174,
+      "test_accuracy": 0.6274509803921569,
+      "test_f1_macro": 0.624749234505332
+    }
+  },
+  "test": {
+    "accuracy": 0.6862745098039216,
+    "precision_macro": 0.7104549329613268,
+    "recall_macro": 0.6862745098039217,
+    "f1_macro": 0.6845938375350139,
+    "report": {
+      "negative": {
+        "precision": 0.7272727272727273,
+        "recall": 0.47058823529411764,
+        "f1-score": 0.5714285714285714,
+        "support": 17.0
+      },
+      "neutral": {
+        "precision": 0.8823529411764706,
+        "recall": 0.8823529411764706,
+        "f1-score": 0.8823529411764706,
+        "support": 17.0
+      },
+      "positive": {
+        "precision": 0.5217391304347826,
+        "recall": 0.7058823529411765,
+        "f1-score": 0.6,
+        "support": 17.0
+      },
+      "accuracy": 0.6862745098039216,
+      "macro avg": {
+        "precision": 0.7104549329613268,
+        "recall": 0.6862745098039217,
+        "f1-score": 0.6845938375350139,
+        "support": 51.0
+      },
+      "weighted avg": {
+        "precision": 0.7104549329613269,
+        "recall": 0.6862745098039216,
+        "f1-score": 0.6845938375350139,
+        "support": 51.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        8,
+        0,
+        9
+      ],
+      [
+        0,
+        15,
+        2
+      ],
+      [
+        3,
+        2,
+        12
+      ]
+    ]
+  },
+  "warnings": [
+    "This is the small demo dataset. Scores on it are NOT a reliable estimate of real-world accuracy."
+  ]
+}
